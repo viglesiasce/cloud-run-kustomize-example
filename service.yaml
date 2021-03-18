@@ -1,0 +1,9 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: kustomize-example
+spec:
+  template:
+    spec:
+      containers:
+      - image: gcr.io/vic-cloud-run-kustomize-1/kustomize-example

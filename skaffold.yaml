@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta13
+kind: Config
+metadata:
+  name: cloud-run-kustomize
+build:
+  local:
+    push: true
+  artifacts:
+  - image: gcr.io/vic-cloud-run-kustomize-1/kustomize-example
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kustomize: {}
