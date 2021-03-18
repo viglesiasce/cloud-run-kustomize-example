@@ -9,9 +9,9 @@ build:
   - image: gcr.io/vic-cloud-run-kustomize-1/kustomize-example
     docker:
       dockerfile: Dockerfile
-test:
-  - image: gcr.io/vic-cloud-run-kustomize-1/kustomize-example
-    structureTests:
-    - test.yaml
+# test:
+#   - image: gcr.io/vic-cloud-run-kustomize-1/kustomize-example
+#     structureTests:
+#     - test.yaml
 deploy:
   kustomize: {}
