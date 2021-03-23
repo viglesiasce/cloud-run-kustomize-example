@@ -3,7 +3,7 @@
 ## Intro
 
 This repo shows an example of using declarative configuration for Cloud Run (`service.yaml`)
-and managing that configuration for use in many environments using Kustomize.
+and managing that configuration for use in many environments using [Kustomize](https://kustomize.io/), a template-free way to customize application configuration.
 
 Kustomize allows you to take a base yaml and then apply incremental patches for various use cases. For example, you may want mostly the same configuration across development and production but with some small tweaks.
 
