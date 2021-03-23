@@ -2,6 +2,8 @@
 
 ## Intro
 
+![Architecture Diagram](arch.png)
+
 ## Tutorial
 
 1. Create 2 projects, one for development and another for production.
