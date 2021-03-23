@@ -1,0 +1,11 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: kustomize-example
+spec:
+  template:
+    spec:
+      containerConcurrency: 40
+      timeoutSeconds: 10
+      containers:
+      - image: kustomize-example

@@ -3,15 +3,16 @@ kind: Config
 metadata:
   name: cloud-run-kustomize
 build:
-  local:
-    push: true
+  googleCloudBuild: {}
   artifacts:
-  - image: gcr.io/vic-cloud-run-kustomize-1/kustomize-example
-    docker:
-      dockerfile: Dockerfile
-# test:
-#   - image: gcr.io/vic-cloud-run-kustomize-1/kustomize-example
-#     structureTests:
-#     - test.yaml
+  - image: kustomize-example
 deploy:
-  kustomize: {}
+  kustomize:
+    paths:
+    - dev/
+profiles:
+  - name: prod
+    deploy:
+      kustomize:
+        paths: 
+        - prod/
