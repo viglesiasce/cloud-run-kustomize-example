@@ -6,6 +6,7 @@ build:
   googleCloudBuild: {}
   artifacts:
   - image: kustomize-example
+    context: src/
 deploy:
   kustomize:
     paths:

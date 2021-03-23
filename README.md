@@ -24,7 +24,6 @@
 1. Build the development version of the app and run it. Do this as many times as you need to feel comfortable that your changes are correct.
 
     ```shell
-    export DEV_PROJECT=vic-cloud-run-kustomize-dev
     skaffold render --default-repo=gcr.io/${DEV_PROJECT} \
                     --add-skaffold-labels=false --loud \
                     -o service-dev.yaml
@@ -34,9 +33,8 @@
 1. Deploy to the production project when you've got things just how you like them.
 
     ```shell
-    export PROD_PROJECT=vic-cloud-run-kustomize-prod
     skaffold render --default-repo=gcr.io/${PROD_PROJECT} \
-                   --add-skaffold-labels=false \
-                    --profile dev -o service-prod.yaml
+                   --add-skaffold-labels=false --loud \
+                   --profile prod -o service-prod.yaml
     gcloud beta run services replace service-prod.yaml --region us-west2 --project ${PROD_PROJECT}
     ```
