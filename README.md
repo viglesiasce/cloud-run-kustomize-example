@@ -2,7 +2,7 @@
 
 ## Intro
 
-This repo shows an example of using declarative configuration for Cloud Run (`service.yaml`)
+This repo shows an example of using declarative configuration for Cloud Run ([`service.yaml`](https://cloud.google.com/run/docs/deploying#yaml_1))
 and managing that configuration for use in multiple environments using [Kustomize](https://kustomize.io/), a template-free way to customize application configuration.
 
 Kustomize allows you to take a [base yaml definition](./base/service.yaml) and then apply incremental patches for various use cases. For example, you may want mostly the same configuration across development and production but with some small tweaks.
