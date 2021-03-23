@@ -3,14 +3,14 @@
 ## Intro
 
 This repo shows an example of using declarative configuration for Cloud Run (`service.yaml`)
-and managing that configuration for use in many environments using [Kustomize](https://kustomize.io/), a template-free way to customize application configuration.
+and managing that configuration for use in multiple environments using [Kustomize](https://kustomize.io/), a template-free way to customize application configuration.
 
-Kustomize allows you to take a base yaml and then apply incremental patches for various use cases. For example, you may want mostly the same configuration across development and production but with some small tweaks.
+Kustomize allows you to take a [base yaml definition](./base/service.yaml) and then apply incremental patches for various use cases. For example, you may want mostly the same configuration across development and production but with some small tweaks.
 
-In addition to using Kustomize, we are using Skaffold drive the automation of building our Docker image with Cloud Build and the creation of the config using Kustomize. When you want to develop you can run `skaffold render` to build an image from your local workspace and setup your Cloud Run `service.yaml` with the reference to that image.
+In addition to using Kustomize, it uses Skaffold drive the automation of building our Docker image with Cloud Build and the creation of the config using Kustomize. When you want to develop you can run `skaffold render` to build an image from your local workspace and setup your Cloud Run `service.yaml` with the reference to that image.
 
-The base configuration is setup in the `base` folder. That is then patched for `dev` so that we only get a maximum of 2 instances to save on costs. 
-Another set of patches are applied to the configuration for the `prod` so that we have a minimum of 2 instances such that users dont have ever hit the service and need to wait for a cold start.
+The base configuration is setup in the [`base` folder](./base/). That is then [patched for `dev`](./dev/) so that we only get a maximum of 2 instances to save on costs.
+Another set of patches are applied to the configuration for [`prod`](./prod/) so that we have a minimum of 2 instances such that users dont have ever hit the service and need to wait for a cold start.
 
 ![Architecture Diagram](arch.png)
 
