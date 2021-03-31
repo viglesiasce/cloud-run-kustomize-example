@@ -1,4 +1,4 @@
-# Multi-environment Config Management for Cloud Code with Kustomize and Skaffold
+# Multi-environment Config Management for Cloud Run with Kustomize and Skaffold
 
 ## Intro
 
