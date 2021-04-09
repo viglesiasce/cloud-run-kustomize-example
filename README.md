@@ -36,7 +36,7 @@ Another set of patches are applied to the configuration for [`prod`](./prod/) so
     gcloud services enable cloudbuild.googleapis.com \
                            run.googleapis.com \
                            containerregistry.googleapis.com \
-                           --project ${DEV_PROJECT}
+                           --project ${PROD_PROJECT}
     ```
 
 1. Build the development version of the app and run it. Do this as many times as you need to feel comfortable that your changes are correct.
